@@ -21,7 +21,7 @@ module CapriccIo
   end
 
   def self.load(file)
-    self.eval File.read(File.join(File.dirname(__FILE__), './capriccio/stdlib/' + file))
+    self.eval File.read(File.join(File.dirname(__FILE__), "./capriccio/stdlib/#{file}"))
   end
 
   load 'boolean.cio'
