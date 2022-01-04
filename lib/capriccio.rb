@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'capriccio/version'
+require_relative 'capriccio/parser'
 require_relative 'capriccio/runtime/object'
 require_relative 'capriccio/runtime/message'
 require_relative 'capriccio/runtime/method'
