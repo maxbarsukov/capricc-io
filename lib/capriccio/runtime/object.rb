@@ -32,5 +32,15 @@ module CapriccIo
     def clone(ruby_value = nil)
       CObject.new(self, ruby_value)
     end
+
+    def to_s(level = 0)
+      s = '  ' * level
+      s << '<CObject'
+      s << " @proto=#{@proto}" unless @proto.nil?
+      s << ", @value=#{@value.inspect}" unless @proto.nil?
+      s << ", @slots=#{@slots.keys}" unless @slots.empty?
+      "#{s}>"
+    end
+    alias inspect to_s
   end
 end
