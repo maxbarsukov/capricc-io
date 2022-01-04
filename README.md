@@ -4,6 +4,9 @@
 [![Codecov](https://codecov.io/gh/maxbarsukov/capricc-io/branch/master/graph/badge.svg?token=9L8Y4N4KKW)](https://codecov.io/gh/maxbarsukov/capricc-io)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/maxbarsukov/capricc-io)
 
+![Gem Version](https://img.shields.io/gem/v/capricc-io)
+![Gem Downloads](https://img.shields.io/gem/dt/capricc-io)
+
 ***Capricc-Io*** is a tiny interpreted *prototyped-based* **homoiconic** and dynamic typing language with ***Io-like messages***.
 
 - **Everything** is an **object** in *Capricc-Io*;
