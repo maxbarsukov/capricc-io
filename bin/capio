@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'readline'
+require_relative '../lib/capriccio'
+
+if ARGV.first
+  CapriccIo.eval File.read(ARGV.first)
+else
+  puts 'Capricc-Io REPL, CTRL+C to quit'
+  loop do
+    line = Readline.readline('>> ')
+    Readline::HISTORY.push(line)
+    value = CapriccIo.eval(line)
+    puts "=> #{value.inspect}"
+  end
+end
