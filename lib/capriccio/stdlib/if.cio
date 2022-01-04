@@ -1,0 +1,9 @@
+set("if", def(
+  set("condition", eval_arg(0))
+  condition and(
+    eval_arg(1)
+  )
+  condition or(
+    eval_arg(2)
+  )
+))

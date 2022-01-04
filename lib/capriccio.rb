@@ -19,4 +19,11 @@ module CapriccIo
     message = Message.parse(code)
     message.call(Runtime)
   end
+
+  def self.load(file)
+    self.eval File.read(File.join(File.dirname(__FILE__), './capriccio/stdlib/' + file))
+  end
+
+  load 'boolean.cio'
+  load 'if.cio'
 end

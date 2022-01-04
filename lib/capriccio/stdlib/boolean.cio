@@ -1,0 +1,16 @@
+Object set("and", def(
+  eval_arg(0)
+))
+Object set("or", def(
+  self
+))
+
+nil set("and", nil)
+nil set("or", def(
+  eval_arg(0)
+))
+
+false set("and", false)
+false set("or", def(
+  eval_arg(0)
+))
