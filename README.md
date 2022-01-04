@@ -4,7 +4,14 @@
 [![Codecov](https://codecov.io/gh/maxbarsukov/capricc-io/branch/master/graph/badge.svg?token=9L8Y4N4KKW)](https://codecov.io/gh/maxbarsukov/capricc-io)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/maxbarsukov/capricc-io)
 
-***Capricc-Io*** is ...
+***Capricc-Io*** is a tiny interpreted *prototyped-based* **homoiconic** and dynamic typing language with ***Io-like messages***.
+
+- **Everything** is an **object** in *Capricc-Io*;
+- Program is just a **series of messages**;
+- Objects don’t have classes, but **prototypes**, their parent objects;
+- Messages are the only data type and also parsing representation → ***homoiconicity***;
+
+In [lib/capriccio/stdlib](https://github.com/maxbarsukov/capricc-io/tree/master/lib/capriccio/stdlib) you can see how you can define an **if** statement or **booleans** behavior directly in *Capric-Io*;
 
 ## Installation
 
@@ -24,8 +31,57 @@ capio your_code.cio
 
 ## Examples of code
 
+Prototypes & OOP:
 ```python
 # comment
+
+set("person", Object clone)
+person set("name", "Max")
+person name print
+# => Max
+
+person set("say_name", def(
+  arguments print
+  # => <Message @name="hello...">
+
+  eval_arg(0) print
+  # => hello...
+
+  self name print
+  # => Max
+))
+
+person say_name("hello...")
+```
+
+Conditions:
+```python
+if(true,
+  "condition is true" print,
+  "nope" print
+)
+# => condition is true
+
+if(false,
+  "nope" print,
+  "condition is false" print
+)
+# => condition is false
+```
+
+Booleans:
+```python
+"yo" or("hi") print
+# => yo
+
+nil or("hi") print
+# => hi
+
+"yo" and("hi") print
+# => hi
+
+1 and(2 or(3)) print
+# => 2
 ```
 
 ## Building
@@ -44,7 +100,7 @@ git clone --depth=1 https://github.com/maxbarsukov/capricc-io.git
 ```
 - **Install dependencies**
 ```bash
-cd capriccio
+cd capricc-io
 bundle install
 ```
 - **Run**
