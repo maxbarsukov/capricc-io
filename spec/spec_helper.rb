@@ -2,12 +2,12 @@
 
 require 'capriccio'
 
-# if ENV['CI'] == 'true'
-#   require 'simplecov'
-#   require 'codecov'
-#   SimpleCov.start
-#   SimpleCov.formatter = SimpleCov::Formatter::Codecov
-# end
+if ENV['CI'] == 'true'
+  require 'simplecov'
+  require 'codecov'
+  SimpleCov.start
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
